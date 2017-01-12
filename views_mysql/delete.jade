@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title
+  body
+    h1
+      a(href='/topic') Server Side JavaScript
+    ul
+      each topic in topics
+        //
+          topics배열 topic li로 나타날때 쓰임
+        li
+          a(href='/topic/'+topic.id)= topic.title
+    h1= 'Delete '+topic.title+'?'
+    form(action='/topic/'+topic.id+'/delete', method='post')
+        input(type='submit', name='', value='delete')
+        input(type='button', name='', value='cancel', onclick='cancel('+topic.id+')')
+    script(type='text/javascript').
+      function cancel(id){
+          location.href='/topic/'+id
+      }

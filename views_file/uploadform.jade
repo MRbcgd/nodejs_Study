@@ -1,0 +1,11 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title
+  body
+    form(action='/upload', method='post' enctype="multipart/form-data")
+      //
+        multer을 사용하기 위해서 반드시 써주어야함
+      input(type='file', name='userfile', value='')
+      input(type='submit', name='', value='submit')
